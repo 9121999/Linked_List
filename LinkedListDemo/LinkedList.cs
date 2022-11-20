@@ -28,7 +28,7 @@ namespace LinkedListDemo
             }
            Console.WriteLine(" Data  Inserted into linked list : {0} ", + node.data);
         }
-        internal void AddInReverseOrder(int data) //70, 30, 56
+        internal void AddInReverseOrder(int data) 
         {
             Node newNode = new Node(data);
             if (this.head == null)
@@ -43,6 +43,32 @@ namespace LinkedListDemo
             }
 
         }
+        internal Node DataAtParticularPosition(int position, int data)
+        {
+            Node newestNode = new Node(data);
+            if (this.head == null)
+            {
+                return newestNode;
+            }
+            if (position == 0)
+            {
+                newestNode.next = this.head;
+                this.head = newestNode;
+                return this.head;
+            }
+            Node prev = null;
+            Node current = this.head;
+            int count = 0;
+            while (current != null && count < position)
+            {
+                prev = current;
+                current = current.next;
+                count++;
+            }
+            newestNode.next = prev.next;
+            prev.next = newestNode;
+            return this.head;
+        }
         internal void Display()
         {
             Node temp = this.head;
@@ -53,7 +79,7 @@ namespace LinkedListDemo
             }
             while (temp != null)
             {
-                Console.WriteLine(temp.data + "");
+                Console.WriteLine(temp.data + " ");
                 temp = temp.next;
             }
         }
