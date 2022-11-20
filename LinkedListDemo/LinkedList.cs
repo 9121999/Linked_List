@@ -120,6 +120,24 @@ namespace LinkedListDemo
             head = head.next;
             return;
         }
+        public Node PopLast()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("Linked List is Empty");
+                return null;
+            }
+            else
+            {
+                Node n = head;
+                while (n.next.next != null)
+                {
+                    n = n.next;
+                }
+                n.next = null;
+                return n;
+            }
+        }
         internal void Display()
         {
             Node temp = this.head;
