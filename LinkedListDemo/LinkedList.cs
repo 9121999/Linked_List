@@ -138,6 +138,24 @@ namespace LinkedListDemo
                 return n;
             }
         }
+        internal void ListSize()
+        {
+            int count = 0;
+            Node temp = this.head;
+            if (temp == null)
+            {
+                Console.WriteLine("Linked List is empty");
+                return;
+            }
+            while (temp != null)
+            {
+                Console.Write(temp.data + " ");
+                temp = temp.next;
+                count++;
+            }
+            Console.WriteLine("Size of List is :" + " " + count);
+
+        }
         internal void Display()
         {
             Node temp = this.head;
