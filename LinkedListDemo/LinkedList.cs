@@ -28,6 +28,21 @@ namespace LinkedListDemo
             }
            Console.WriteLine(" Data  Inserted into linked list : {0} ", + node.data);
         }
+        internal void AddInReverseOrder(int data) //70, 30, 56
+        {
+            Node newNode = new Node(data);
+            if (this.head == null)
+            {
+                this.head = newNode;
+            }
+            else
+            {
+                Node temp = this.head;
+                head = newNode;
+                head.next = temp;
+            }
+
+        }
         internal void Display()
         {
             Node temp = this.head;
