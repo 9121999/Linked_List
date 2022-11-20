@@ -69,6 +69,47 @@ namespace LinkedListDemo
             prev.next = newestNode;
             return this.head;
         }
+        public void Append(int data)
+        {
+            Node node = new Node(data);
+            if (head == null)
+            {
+                head = node;
+            }
+            else
+            {
+                Node node1 = head;
+                while (node1.next != null)
+                {
+                    node1 = node1.next;
+                }
+                node1.next = node;
+            }
+        }
+        internal void InsertAtFirstPosition(int position, int data)          
+        {
+            Node node = new Node(data);
+            if (position < 1)
+            {
+                Console.WriteLine("Invalid Choice");
+            }
+            else if (position == 1)
+            {
+                node.next = head;
+                head = node;
+            }
+            else
+            {
+                Node temp = head;
+                while (position > 2)
+                {
+                    temp = temp.next;
+                    position--;
+                }
+                node.next = temp.next;
+                temp.next = node;
+            }
+        }
         internal void Display()
         {
             Node temp = this.head;
