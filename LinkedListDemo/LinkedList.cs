@@ -110,6 +110,16 @@ namespace LinkedListDemo
                 temp.next = node;
             }
         }
+        public void PopDelete()  
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("List is empty");
+                return;
+            }
+            head = head.next;
+            return;
+        }
         internal void Display()
         {
             Node temp = this.head;
